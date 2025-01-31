@@ -1,0 +1,346 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts-3by.pages.dev/orbitron-v31-latin/orbitron-v31-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-500.woff2")
+    format("woff2");
+}
+
+:root {
+  --primary-color: hsl(195, 100%, 50%);
+  --hover-primary-color: hsl(195, 99%, 37%);
+  --text-color: hsl(0, 0%, 100%);
+  --dark-color-100: hsl(218, 11%, 38%);
+  --dark-color-200: hsl(218, 16%, 14%);
+  --dark-color-300: hsl(0, 0%, 0%);
+
+  /*Fonts*/
+  --font-family-1: "Orbitron";
+  --font-family-2: "Roboto";
+}
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family-2), sans-serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-family: var(--font-family-1), Arial, Helvetica, sans-serif;
+}
+
+main {
+  max-width: 1900px;
+  justify-self: center;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 22222;
+  width: 100%;
+  height: 80px;
+  background-color: whitesmoke;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header .logo-container {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.logo-img {
+  width: 36px;
+  height: 36px;
+}
+
+.logo-container .logo-label a {
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--dark-color-300);
+}
+
+.nav-toggle-menu {
+  font-size: 1.5rem;
+  justify-content: flex-end;
+  align-self: center;
+  cursor: pointer;
+}
+.nav-toggle-close {
+  font-size: 1.5rem;
+  color: whitesmoke;
+  justify-self: flex-end;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: black;
+  width: 300px;
+  height: 100%;
+  transition: all 0.75s ease;
+  padding: 30px 40px;
+}
+
+.nav-toggle:checked ~ nav {
+  right: 0;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  justify-self: center;
+}
+
+nav ul li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+nav ul li a {
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 120%;
+  height: 2px;
+  transform: scaleX(0);
+  background-color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+nav .cta-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.secondary-cta:hover::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath fill='none' d='M0 0h24v24H0z'%3E%3C/path%3E%3Cpath d='M17 4C20.3137 4 23 6.68629 23 10V14C23 17.3137 20.3137 20 17 20H7C3.68629 20 1 17.3137 1 14V10C1 6.68629 3.68629 4 7 4H17ZM17 6H7C4.8578 6 3.10892 7.68397 3.0049 9.80036L3 10V14C3 16.1422 4.68397 17.8911 6.80036 17.9951L7 18H17C19.1422 18 20.8911 16.316 20.9951 14.1996L21 14V10C21 7.8578 19.316 6.10892 17.1996 6.0049L17 6ZM10 9V11H12V13H9.999L10 15H8L7.999 13H6V11H8V9H10ZM18 13V15H16V13H18ZM16 9V11H14V9H16Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.signup-cta::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 4.83582L5.79291 11.0429L7.20712 12.4571L12 7.66424L16.7929 12.4571L18.2071 11.0429L12 4.83582ZM12 10.4857L5.79291 16.6928L7.20712 18.107L12 13.3141L16.7929 18.107L18.2071 16.6928L12 10.4857Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  padding: 0 10px;
+}
+
+.play-now-cta::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300bfff'%3E%3Cpath fill='none' d='M0 0h24v24H0z'%3E%3C/path%3E%3Cpath d='M17 4C20.3137 4 23 6.68629 23 10V14C23 17.3137 20.3137 20 17 20H7C3.68629 20 1 17.3137 1 14V10C1 6.68629 3.68629 4 7 4H17ZM17 6H7C4.8578 6 3.10892 7.68397 3.0049 9.80036L3 10V14C3 16.1422 4.68397 17.8911 6.80036 17.9951L7 18H17C19.1422 18 20.8911 16.316 20.9951 14.1996L21 14V10C21 7.8578 19.316 6.10892 17.1996 6.0049L17 6ZM10 9V11H12V13H9.999L10 15H8L7.999 13H6V11H8V9H10ZM18 13V15H16V13H18ZM16 9V11H14V9H16Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  padding: 0 10px;
+  color: var(--primary-color);
+}
+
+/*hero section*/
+
+.hero {
+  height: auto;
+  width: 100%;
+  position: relative;
+  margin-top: 80px;
+}
+
+.title-description-cta {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  padding: 0 20px;
+  display: grid;
+  gap: 10px;
+  line-height: 1;
+  color: var(--text-color);
+}
+
+.title-description-cta .title {
+  font-size: clamp(1rem, -0.056rem + 4.507vi, 4rem);
+}
+
+.title-description-cta .description {
+  font-size: clamp(0.875rem, 0.655rem + 0.939vi, 1.5rem);
+}
+
+.title-description-cta .start-game {
+  border-radius: 6px;
+  width: 100px;
+  font-size: clamp(0.75rem, 0.618rem + 0.563vi, 1.125rem);
+  padding: 0 10px;
+}
+
+/*rules section*/
+
+.rps-rules {
+  justify-self: center;
+  margin: 48px 20px;
+  text-align: center;
+}
+
+.rps-rules .rules-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+@media (min-width: 800px) {
+  #nav-toggle {
+    display: none;
+  }
+  nav {
+    width: 100%;
+    position: unset;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  nav ul li {
+    margin: 0;
+    width: 80px;
+  }
+  nav ul li a {
+    color: var(--dark-color-100);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transform: scaleX(0);
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+  }
+  nav .cta-header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-toggle-menu {
+    display: none;
+  }
+  .nav-toggle-close {
+    display: none;
+  }
+  .title-description-cta {
+    top: 40%;
+    padding: 0 30px;
+  }
+
+  .title-description-cta .start-game {
+    width: 110px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-video video {
+    width: auto;
+    height: 100%;
+  }
+
+  .title-description-cta {
+    top: 45%;
+    padding: 0 100px;
+    gap: 20px;
+  }
+
+  .title-description-cta .start-game {
+    width: 130px;
+  }
+}
