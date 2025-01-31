@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="abhi.0zero">
+    <meta name="description" content="This is Rock Paper Scissor web app">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/utility-classes.css">
+    <link rel="stylesheet" href="./css/rock-paper-scissor.css">
+    <title>Rock Papper Scissor</title>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <div class="logo-container">
+                <img class="logo-img" src="./assets/images/59966.jpg" alt="Image of Paper Plane" width="36" height="36">
+                <h1 class="logo-label"><a href="#">R.P.S</a></h1>
+            </div>
+            <label for="nav-toggle" class="nav-toggle-menu">
+                <i class="ri-menu-line" aria-label="menu"></i>
+            </label>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+            <nav>
+                <label for="nav-toggle" class="nav-toggle-close" >
+                    <i class="ri-close-line" aria-label="close menu"></i>
+                </label>
+                <ul class="nav-list">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Play</a></li>
+                    <li><a href="#">Result</a></li>
+                </ul>
+                <div class="cta-header">
+                    <button class="secondary-cta  play-now-cta cta">Play Now</button>
+                    <button class="primary-cta signup-cta cta">Sign Up</button>
+                </div>
+            </nav>
+        </header>
+        <!-- hero section -->
+        <section class="hero">
+            <div class="bg-video">
+                <video  muted loop  playsinline>
+                    <source src="./assets/videos/rock-paper-scissor.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="title-description-cta">
+                <h1 class="title">Rock-Paper-Scissors</h1>
+                <p class="description">Choose rock, paper, or scissors to compete. Rock beats scissors, scissors beat paper, and paper beats rock.</p>
+                <button class="primary-cta start-game cta">Start Game</button>
+            </div>
+        </section>
+        <!-- rules section -->
+        <section class="rps-rules">
+            <h2 class="section-title">Rules of Rock-Paper-Scissors</h2>
+            <ul class="rules-list">
+                <li><span class="blue-color">Rock</span> beats <span class="blue-color">Scissors</span> (Rock crushes Scissors)</li>
+                <li><span class="blue-color">Scissors</span> beats <span class="blue-color">Paper</span> (Scissors cut Paper)</li>
+                <li><span class="blue-color">Paper</span> beats <span class="blue-color">Rock</span> (Paper covers Rock)</li>
+            </ul>
+            <p class="subtext">If both players choose the same item, it's a  <span class="blue-color">Draw</span>.</p>
+        </section>
+        <!-- game section -->
+        <section class="game-section">
+            <section class="choice-visual-section">
+                <h2 class="section-title">Game Choices</h2>
+                <div class="choice-visual">
+                   <div class="user-choice">
+                    <img src="./assets/images/paper.jpg" alt="image of paper" width="100" height="100">
+                    <p class="player-name">Your Choice</p>
+                   </div>
+                    <p class="subtext">Vs</p>
+                    <img src="./assets/images/rock.jpg" alt="image of rock" width="100" height="100">
+                    <p class="player-name">Computer Choice</p>
+                </div>
+            </section>
+
+        </section>
+    </main>
+</body>
+</html>
