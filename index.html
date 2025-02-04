@@ -31,8 +31,8 @@
                     </label>
                     <ul class="nav-list">
                         <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">Play</a></li>
-                        <li><a href="#">Result</a></li>
+                        <li><a href="#game-section">Play</a></li>
+                        <li><a href="#result">Result</a></li>
                     </ul>
                     <div class="cta-header">
                         <button class="secondary-cta  play-now-cta cta">Play
@@ -77,7 +77,7 @@
                     <span class="blue-color">Draw</span>.</p>
             </section>
             <!-- game section -->
-            <section class="game-section">
+            <section class="game-section" id="game-section">
                 <section class="choice-visual-section section-default-style">
                     <h2 class="section-title">Game Choices</h2>
                     <div class="choice-visual">
@@ -105,10 +105,10 @@
                             data-choice="scissors">Scissors</button>
                     </div>
                 </section>
-                </section>
             </section>
+
             <!-- result -->
-            <section class="result">
+            <section class="result" id="result">
                 <section class="game-result section-default-style">
                     <h1 class="section-title">Game Result</h1>
                     <div class="result-msg">
@@ -127,76 +127,166 @@
                         <button class="cta primary-cta reset-cta">Reset
                             game</button>
                     </div>
-                <section class="score-board section-default-style">
-                    <h3 class="sub-heading">Scoreboard</h3>
-                    <div class="table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th><h4>Score Summary</h4></th>
-                                    <th><h4>Achivements</h4></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <p class="regular-text">Your score :
-                                            <span data-score="Your">
-                                                150
+                    <section class="score-board section-default-style">
+                        <h3 class="sub-heading">Scoreboard</h3>
+                        <div class="table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><h4>Score Summary</h4></th>
+                                        <th><h4>Achivements</h4></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="regular-text">Your score :
+                                                <span data-score="Your">
+                                                    150
+                                                </span>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <img
+                                                    src="./assets/images/03-trophy/golden-trophy/golden-trophy-32.png"
+                                                    alt="Achivements"
+                                                    loading="lazy">
+                                                | <p class="regular-text"
+                                                    data-achivement>Golden
+                                                    Trophy</p>
                                             </span>
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <span>
-                                            <img
-                                                src="./assets/images/03-trophy/golden-trophy/golden-trophy-32.png"
-                                                alt="Achivements">
-                                            | <p class="regular-text"
-                                                data-achivement>Golden
-                                                Trophy</p>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>
-                                            Computer score :
-                                            <span data-score="computer">
-                                                150
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                Computer score :
+                                                <span data-score="computer">
+                                                    150
+                                                </span>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <img
+                                                    src="./assets/images/03-trophy/silver-trophy/silver-trophy-32.png"
+                                                    alt="Achivements"
+                                                    loading="lazy">
+                                                | <p class="regular-text"
+                                                    data-achivement>Silver
+                                                    Medal</p>
                                             </span>
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <span>
-                                            <img
-                                                src="./assets/images/03-trophy/silver-trophy/silver-trophy-32.png"
-                                                alt="Achivements">
-                                            | <p class="regular-text"
-                                                data-achivement>Silver Medal</p>
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="progress">
-                            <p class="blue-color">LVl <span data-lvl>1</span></p>
-                            <progress value="10" max="100"></progress>
-                            <img src="./assets/images/03-trophy/golden-trophy/golden-trophy-64.png" alt="" width="50">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="progress">
+                                <p class="blue-color">LVl <span
+                                        data-lvl>1</span></p>
+                                <progress value="10" max="100"></progress>
+                                <img
+                                    src="./assets/images/03-trophy/golden-trophy/golden-trophy-64.png"
+                                    alt width="50" loading="lazy">
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section class="final-result section-default-style">
-                    <h3 class="sub-heading">Final Scores</h3>
-                    <div class="final-stats">
-                        <p class="total-match-text">Total match</p>
-                        <p class="total-match">25</p>
-                        <div class="chart">
+                    </section>
+                    <section class="final-result section-default-style">
+                        <h3 class="sub-heading">Final Scores</h3>
+                        <div class="final-stats">
+                            <p class="total-match-text">Total match</p>
+                            <h3 class="total-match">25</h3>
+                            <div class="chart">
 
+                            </div>
+                            <label for="dropdown-cta" class="dropdown-label">
+                                <i
+                                    class="ri-triangle-fill dropdown-icon">
+                                </i>
+                            </label>
+                            <input type="checkbox" name="dropdown-cta"
+                                id="dropdown-cta">
+                        </div>
+                        <p class="subtext blue-color">Congratulations! You've
+                            achieved a high
+                            score.</p>
+                 </section>
+                </section>
+                <section class="join-us ">
+                    <div class="content">
+                        <h1 class="section-title joinus-title">
+                            Ready to Play Again?
+                        </h1>
+                        <p class="subtext joinus-description">Challenge yourself
+                            once more or return to the main page to explore
+                            other
+                            games. Test your skills and have fun!</p>
+                        <button class="join-us-cta cta">
+                            Join for free
+                        </button>
+                    </div>
+                    <picture>
+                        <source media="(min-width: 800px)"
+                            srcset="./assets/images/human-playing-rock-paper-scissor.jpg">
+                        <img
+                            src="./assets/images/children-playing-rock-paper-scissor.jpg"
+                            alt="humans playing rock paper scissor"
+                            loading="lazy"
+                            height="300">
+                    </picture>
+                </section>
+                <section class="section-default-style"></section>
+            </section>    
+            </main>
+            <footer>
+                <div class="news-letter section-default-style">
+                    <h1 class="section-title">
+                        Subscribe to our newsletter
+                    </h1>
+                    <form action>
+                        <input type="email" name="email" id="newsletter"
+                            placeholder="Input your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="logo-links">
+                    <div class="logo-other-links">
+                        <div class="logo-container">
+                            <img class="logo-img"
+                                src="./assets/images/59966.jpg"
+                                alt="Image of Paper Plane" width="36"
+                                height="36">
+                            <h1 class="logo-label white-color"><a href="#"
+                                    class="white-color">R.P.S</a></h1>
+                        </div>
+                        <div class="other-links">
+                            <a href="#" class="link">Pricing</a>
+                            <a href="#" class="link">About us</a>
+                            <a href="#" class="link">Features</a>
+                            <a href="#" class="link">Help Center</a>
+                            <a href="#" class="link">Contact us</a>
+                            <a href="#" class="link">FAQs</a>
                         </div>
                     </div>
-                    <p class="subtext">Congratulations! You've achieved a high score.</p>
-                </section>
-            </section>
-        </main>
-    </body>
-</html>
+                    <div class="terms-social-links">
+                        <span class="terms-links">&copy; 2025 Brand, Inc.
+                            &bullet; <a href
+                                class="link">Privacy</a> &bullet; <a href
+                                class="link">Terms</a> &bullet; <a href
+                                class="link">Sitemap</a> </span>
+                        <div class="social-link">
+                            <a href><i class="ri-twitter-x-line bg-black link"
+                                    aria-label="X"></i></a>
+                            <a href><i class="ri-facebook-fill bg-blue link"
+                                    aria-label="Facebook"></i></a>
+                            <a href><i class="ri-linkedin-box-fill bg-blue link"
+                                    aria-label="Linkedin"></i></a>
+
+                            <a href><i class="ri-youtube-fill bg-red link"
+                                    aria-label="
+                        Youtube"></i></a>
+                        </div>
+                    </div>
+                </footer>
+            </body>
+        </html>
