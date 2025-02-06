@@ -5,7 +5,8 @@
   
   .active{
     color: var(--primary-color);
-    border-bottom:4px solid var(--primary-color) ;
+    border-bottom:4px solid var(--primary-color);
+    
   }
   
   a {
@@ -52,6 +53,41 @@
     font-weight: 500;
   }
 
+  .section-default-style{
+    width: 100%;
+    justify-items: center;
+    padding: 48px 20px;
+  }
+
+  .sub-heading{
+    font-size: clamp(1.25rem, 1.162rem + 0.376vi, 1.5rem);
+  }
+
+  th,td{
+    padding: 12px 16px;
+  }
+  th{
+    color: var(--dark-color-100);
+  }
+
+
+  .bg-blue{
+    background-color: hsl(240, 66%, 47%);
+    border-radius: 3px;
+  }
+
+  .bg-red{
+    background-color: red;
+    border-radius: 3px;
+  }
+  .bg-black{
+    background-color: black;
+    border-radius: 3px;
+  }
+
+  .logo-label.white-color a{
+    color: var(--text-color);
+  }
   @media (min-width: 800px){
     .cta{
         width: 150px;
