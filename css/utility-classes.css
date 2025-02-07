@@ -3,6 +3,19 @@
     font-weight: 500;
   }
   
+  .hide{
+    display: none;
+  }
+
+  .visible-flex{
+    display: flex;
+  }
+  .visible-grid{
+    display: grid;
+  }
+  .visible-block{
+    display: block;
+  }
   .active{
     color: var(--primary-color);
     border-bottom:4px solid var(--primary-color);
