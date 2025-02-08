@@ -62,3 +62,7 @@ export let userAchivements = {
     id : 1,
     level : 1,
 };
+
+export  let computerAchivements = {
+    id : 1
+}
