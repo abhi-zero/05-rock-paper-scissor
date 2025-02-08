@@ -1,4 +1,4 @@
-import { choices, choicesImage, scores, rounds, userAchivements, trophies } from "./datastructures.js";
+import { choices, choicesImage, scores, rounds, userAchivements, trophies, computerAchivements } from "./datastructures.js";
 
 let userChoice;
 let computerChoice;
@@ -19,7 +19,8 @@ userChoiceSection.addEventListener("click", (event) => {
   displayResultsMsg(result);
   updateScore();
   displayScore();
-  updateUserAchivements();
+  updateUserAchivements(userAchivements);
+  computerAchivement(computerAchivements);
 });
 function getUserChoice(choiceBtn) {
   userChoice = choiceBtn.dataset.choice;
@@ -88,11 +89,12 @@ function updateScore(){
 }
 
 function displayScore(){
-  const userScore = document.querySelector("[data-score='user']");
-  const computerScore = document.querySelector("[data-score='computer']");
-  userScore.textContent = scores.userScore;
-  computerScore.textContent = scores.computerScore;
+  const userScoreText = document.querySelector("[data-score='user']");
+  const computerScoreText = document.querySelector("[data-score='computer']");
+  userScoreText.textContent = scores.userScore;
+  computerScoreText.textContent = scores.computerScore;
   displayUserAchivements()
+  displayComputerAchivement()
 }
 
 function calculateLevelAndTrophy(playerPoints){
@@ -107,7 +109,7 @@ function calculateLevelAndTrophy(playerPoints){
   }else if(playerPoints >= 101){
     level = 3;
     id = 3;
-  }else if(playerPoints >= 51){
+  }else if(playerPoints >= 50 ){
     level = 2;
     id = 2;
   }else{
@@ -115,13 +117,13 @@ function calculateLevelAndTrophy(playerPoints){
     id = 1;
   }
 
-  return {id, level };
+  return {id, level};
 }
 
-function updateUserAchivements(){
+function updateUserAchivements(achivement){
   const userAchivement = calculateLevelAndTrophy(scores.userScore);
-  userAchivements.id = userAchivement.id;
-  userAchivements.level = userAchivement.level;
+  achivement.id = userAchivement.id;
+  achivement.level = userAchivement.level;
 }
 
 function findAchivements(id){
@@ -138,4 +140,17 @@ function displayUserAchivements(){
   userTableText.textContent = userAchivement.name + " " + "Trophy";
   userTableTrophy.src = userAchivement.smallIcon;
   userTrophy.src = userAchivement.largeIcon;
+}
+
+function computerAchivement(achivement){
+  const computerAchivement = calculateLevelAndTrophy(scores.computerScore);
+  achivement.id = computerAchivement.id;
+}
+
+function displayComputerAchivement(){
+  const computerTableTrophy = document.querySelector("[data-achivement='computerTableTrophy']");
+  const computerTableText = document.querySelector("[data-achivement='computerTableText']");
+  const computerAchivement = findAchivements(computerAchivements.id);
+  computerTableText.textContent = computerAchivement.name + " " + "Trophy";
+  computerTableTrophy.src = computerAchivement.smallIcon;
 }
