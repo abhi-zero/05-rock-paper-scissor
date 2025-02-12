@@ -66,3 +66,42 @@ export let userAchivements = {
 export  let computerAchivements = {
     id : 1
 }
+
+export function saveGameData(){
+    localStorage.setItem('scores', JSON.stringify(scores));
+    localStorage.setItem('rounds', JSON.stringify(rounds));
+    localStorage.setItem('userAchivements', JSON.stringify(userAchivements));
+    localStorage.setItem('computerAchivements', JSON.stringify(computerAchivements));
+}
+
+export function loadGameData(){
+    try{
+        if(localStorage.getItem('scores')){
+            Object.assign(scores = JSON.parse(localStorage.getItem('scores')));
+        }
+        if (localStorage.getItem("rounds")) {
+            Object.assign(rounds, JSON.parse(localStorage.getItem("rounds")));
+          }
+        if (localStorage.getItem("userAchivements")) {
+            Object.assign(userAchivements, JSON.parse(localStorage.getItem("userAchivements")));
+          }
+        if (localStorage.getItem("computerAchivements")) {
+            Object.assign(computerAchivements, JSON.parse(localStorage.getItem("computerAchivements")));
+          }
+    }catch (error) {
+        console.error("Error loading game data:", error);
+    }
+}
+
+export function resetGame(){
+    localStorage.clear();
+    scores.userScore = 0;
+    scores.computerScore = 0;
+    rounds.totalRounds = 0;
+    rounds.userWins = 0;
+    rounds.computerWins = 0;
+    rounds.ties = 0;
+    userAchivements.id = 1;
+    userAchivements.level = 1;
+    computerAchivements.id = 1;
+}
