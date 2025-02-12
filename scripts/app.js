@@ -31,6 +31,8 @@ const userTrophy = document.querySelector('[data-achivement="userTrophy"]');
 const userLevelText = document.querySelector('[data-lvl]');
 
 const resetBtn = document.querySelector('.reset-cta');
+const winVideo = document.querySelector('[data-result="win"]').querySelector('video');
+const loseVideo = document.querySelector('[data-result="lose"]').querySelector('video');
 
 let userChoice;
 let computerChoice;
@@ -107,10 +109,16 @@ function displayResultsMsg(result) {
 function resultMsg(result) {
   switch (result) {
     case "Tie":
+      winVideo.style.height = "0px";
+      loseVideo.style.height = "0px";
       return `It\'s a tie! Both chose ${userChoice}  .`;
     case "Win":
+      loseVideo.style.height = "0px";
+      winVideo.style.height = "200px";
       return `You win! ${userChoice} beats ${computerChoice} .`;
     case "Lose":
+      loseVideo.style.height = "200px";
+      winVideo.style.height = "0px";
       return `You lose! ${computerChoice} beats ${userChoice} .`;
     default:
       return "Error: Invalid result";
@@ -183,6 +191,10 @@ function displayLevel(achivements){
   const achivement = findAchivements(achivements.id);
   userLevelText.textContent = achivements.level;
   userTrophy.src = achivement.largeIcon;
+}
+
+function progressBar(){
+  const progress = document. 
 }
 
 })
